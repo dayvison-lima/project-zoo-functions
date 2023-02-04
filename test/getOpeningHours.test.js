@@ -27,5 +27,9 @@ describe('Testes da função getOpeningHours', () => {
     expect(() => getOpeningHours('sunday', '09:s0-PM')).toThrow(Error);
     // verifica se a hora é entre 0 e 12
     expect(() => getOpeningHours('sunday', '13:00-PM')).toThrow(Error);
+    // verifica se os minutos são entre 0 e 59
+    expect(() => getOpeningHours('sunday', '09:65-PM')).toThrow(Error);
+    // verifica se o dia é válido
+    expect(() => getOpeningHours('segunda', '12:00-PM')).toThrow(Error);
   });
 });
