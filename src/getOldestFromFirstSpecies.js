@@ -12,6 +12,4 @@ const getOldestFromFirstSpecies = (id) => {
   return [nome, sexo, idade];
   // const animais = data.species.find((animal) => animal.id === primeiroAnimalId);
 };
-console.log(getOldestFromFirstSpecies('b0dc644a-5335-489b-8a2c-4e086c7819a2'));
-
 module.exports = getOldestFromFirstSpecies;
