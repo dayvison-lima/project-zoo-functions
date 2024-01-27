@@ -1,7 +1,6 @@
-const { species } = require('../data/zoo_data');
-const data = require('../data/zoo_data');
+const { species, employees } = require('../data/zoo_data');
 
-const arrayGeral = data.employees.map((empregado) => {
+const arrayGeral = employees.map((empregado) => {
   const array = {
     id: empregado.id,
     fullName: `${empregado.firstName} ${empregado.lastName}`,

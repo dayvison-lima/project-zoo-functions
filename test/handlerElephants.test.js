@@ -9,6 +9,17 @@ describe('Testes da função HandlerElephants', () => {
     // testa se o param é uma string
     const notString = 'Parâmetro inválido, é necessário uma string';
     expect(handlerElephants(123)).toEqual(notString);
+
+    // Mock dos elefantes
+    const elephants = {
+      residents: [
+        { name: 'Ilana', age: 11, sex: 'female' },
+        { name: 'Orval', age: 15, sex: 'male' },
+        { name: 'Bea', age: 12, sex: 'female' },
+        { name: 'Jefferson', age: 4, sex: 'male' },
+      ],
+    };
+
     // testa se retorna o número correto de elefantes
     expect(handlerElephants('count')).toEqual(4);
     // testa se retorna os nomes dos elefantes
@@ -16,5 +27,10 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants('names')).toEqual(names);
     // testa se retorna a idade média dos elefantes
     expect(handlerElephants('averageAge')).toBeCloseTo(10.5);
+    // Testa quando o param é uma string desconhecida
+    expect(handlerElephants('unknown')).toBeNull();
+
+    const validParam = 'residents';
+    expect(handlerElephants(validParam)).toEqual(elephants[validParam]);
   });
 });
