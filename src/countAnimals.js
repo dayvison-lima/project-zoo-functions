@@ -11,7 +11,6 @@ const animalsWithoutSex = (animal) => (data.species
   .find((spec) => spec.name === animal.species).residents.length);
 
 const countAnimals = (animal) => {
-  // seu código aqui
   if (!animal) {
     return data.species.reduce((acc, specie) => {
       acc[specie.name] = specie.residents.length;
